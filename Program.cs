@@ -34,14 +34,22 @@ namespace InventorySystem
         // Restock the item
         public void RestockItem(int additionalQuantity)
         {
-            // TODO: Increase the item's stock quantity by the additional quantity.
+            QuantityInStock += additionalQuantity;
+            Console.WriteLine($"{additionalQuantity} {ItemName}(s) added to stock. Total quantity: {QuantityInStock}");
         }
 
         // Sell an item
         public void SellItem(int quantitySold)
         {
-            // TODO: Decrease the item's stock quantity by the quantity sold.
-            // Make sure the stock doesn't go negative.
+            if (quantitySold <= QuantityInStock)
+            {
+                QuantityInStock -= quantitySold;
+                Console.WriteLine($"{quantitySold} {ItemName}(s) sold. Remaining stock: {QuantityInStock}");
+            }
+            else
+            {
+                Console.WriteLine($"Insufficient stock of {ItemName} to sell {quantitySold}. Available stock: {QuantityInStock}");
+            }
         }
 
         // Check if an item is in stock
