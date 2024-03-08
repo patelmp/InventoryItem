@@ -22,7 +22,6 @@ namespace InventorySystem
         }
 
         // Defining multiple public Methods
-
         // Update the price of the item
         public void UpdatePrice(double newPrice)
         {
