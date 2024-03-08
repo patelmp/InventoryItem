@@ -13,18 +13,22 @@ namespace InventorySystem
         public int QuantityInStock { get; set; }
 
 
-        // Constructor
+        // Initialized the properties with the values passed to the constructor
         public InventoryItem(string itemName, int itemId, double price, int quantityInStock)
         {
-            // TODO: Initialize the properties with the values passed to the constructor.
+            ItemName = itemName;
+            ItemId = itemId;
+            Price = price;
+            QuantityInStock = quantityInStock;
         }
 
-        // Methods
+        // Defining multiple public Methods
 
         // Update the price of the item
         public void UpdatePrice(double newPrice)
         {
-            // TODO: Update the item's price with the new price.
+            Price = newPrice;
+            Console.WriteLine($"Price of {ItemName} updated to {Price:C}");
         }
 
         // Restock the item
