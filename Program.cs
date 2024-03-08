@@ -1,5 +1,7 @@
 ﻿//Defined namespace for better understanding of programmer
 
+using InventorySystem;
+
 namespace InventorySystem
 {
     //Define Public class name as InventoryItem
@@ -76,17 +78,25 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Creating instances of InventoryItem
+        // Creating instances of InventoryItemDetails
         InventoryItem item1 = new InventoryItem("Laptop", 101, 1200.50, 10);
         InventoryItem item2 = new InventoryItem("Smartphone", 102, 800.30, 15);
 
-        // TODO: Implement logic to interact with these objects.
-        // Example tasks:
-        // 1. Print details of all items.
-        // 2. Sell some items and then print the updated details.
-        // 3. Restock an item and print the updated details.
-        // 4. Check if an item is in stock and print a message accordingly.
+        // Printing initial details
+        Console.WriteLine("Initial Item Details:");
+        item1.PrintDetails();
+        item2.PrintDetails();
+        Console.WriteLine();
 
+        // Updating the price of item1
+        Console.WriteLine("Updating the price of item1:");
+        item1.UpdatePrice(1500.00);
+        Console.WriteLine();
 
+        // Selling some items
+        Console.WriteLine("Selling Items:");
+        item1.SellItem(3);
+        item2.SellItem(27); // Trying to sell more than in stock
+        Console.WriteLine();
     }
 }
