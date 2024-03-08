@@ -55,30 +55,38 @@ namespace InventorySystem
         // Check if an item is in stock
         public bool IsInStock()
         {
-            // TODO: Return true if the item is in stock (quantity > 0), otherwise false.
+            if (QuantityInStock > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         // Print item details
         public void PrintDetails()
         {
-            // TODO: Print the details of the item (name, id, price, and stock quantity).
+            Console.WriteLine($"ItemName: {ItemName}, ID: {ItemId}, Price: {Price:C}, Stock Quantity: {QuantityInStock}");
         }
     }
-    class Program
+}
+class Program
+{
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            // Creating instances of InventoryItem
-            InventoryItem item1 = new InventoryItem("Laptop", 101, 1200.50, 10);
-            InventoryItem item2 = new InventoryItem("Smartphone", 102, 800.30, 15);
+        // Creating instances of InventoryItem
+        InventoryItem item1 = new InventoryItem("Laptop", 101, 1200.50, 10);
+        InventoryItem item2 = new InventoryItem("Smartphone", 102, 800.30, 15);
 
-            // TODO: Implement logic to interact with these objects.
-            // Example tasks:
-            // 1. Print details of all items.
-            // 2. Sell some items and then print the updated details.
-            // 3. Restock an item and print the updated details.
-            // 4. Check if an item is in stock and print a message accordingly.
+        // TODO: Implement logic to interact with these objects.
+        // Example tasks:
+        // 1. Print details of all items.
+        // 2. Sell some items and then print the updated details.
+        // 3. Restock an item and print the updated details.
+        // 4. Check if an item is in stock and print a message accordingly.
 
 
-        }
     }
+}
